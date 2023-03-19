@@ -1,14 +1,15 @@
 package com.demo.ordersManager.dto;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 @Data
+@DynamoDBTable(tableName = "organization")
 public class Organization {
 
-    private String id;
-    private String country;
-    private String office;
-    private String brand;
-    private String team;
+    @Id
+    private OrganizationId id;
+    private String officeId;
 
 }
